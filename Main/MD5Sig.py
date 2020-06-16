@@ -45,5 +45,3 @@ def Hash():
         new_file.write(file+'\0')  #here we are adding a null to change the file content
     New3 = hashlib.md5(open('Images\Test3.jpg','rb').read()).hexdigest();
     print("Hash4: " + New3);
-
-Main();
