@@ -23,13 +23,14 @@ def checkOld():
 def Hash():
     file = open('Images\Test.jpg', 'rb').read()
     with open('Images\Test.jpg', 'wb') as new_file:
-        new_file.write(file+'\0')  #here we are adding a null to change the file content
+        print(file)
+        new_file.write(str(file)+'\0')  #here we are adding a null to change the file content
     New = hashlib.md5(open('Images\Test.jpg','rb').read()).hexdigest();
     print("Your new hashes are");
     print("Hash1: " + New);
 
-    file = open('Images\Test1.jpg', 'rb').read()
-    with open('Images\Test1.jpg', 'wb') as new_file:
+    file = open('Images\Test1.jpg', 'r+b').read()
+    with open('Images\Test1.jpg', 'w+b') as new_file:
         new_file.write(file+'\0')  #here we are adding a null to change the file content
     New1 = hashlib.md5(open('Images\Test1.jpg','rb').read()).hexdigest();
     print("Hash2: " + New1);
