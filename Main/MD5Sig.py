@@ -1,6 +1,7 @@
 import hashlib
 
 
+
 def Main():
     checkOld();
     Hash();
@@ -20,29 +21,39 @@ def checkOld():
 
 
 
+
+
+
 def Hash():
-    file = open('Images\Test.jpg', 'rb').read()
-    with open('Images\Test.jpg', 'wb') as new_file:
-        print(file)
-        new_file.write(str(file)+'\0')  #here we are adding a null to change the file content
-    New = hashlib.md5(open('Images\Test.jpg','rb').read()).hexdigest();
-    print("Your new hashes are");
-    print("Hash1: " + New);
+    print("Your new Hashes are: ")
+    new1 = hashlib.md5(open('Images\Test.jpg','rb').read()).hexdigest();
+    hasher = hashlib.md5()
+    with open('Images\Test.jpg', 'ab') as afile:
+        buf = afile.write(b'\0')
+    new = hashlib.md5(open('Images\Test.jpg','rb').read()).hexdigest();
 
-    file = open('Images\Test1.jpg', 'r+b').read()
-    with open('Images\Test1.jpg', 'w+b') as new_file:
-        new_file.write(file+'\0')  #here we are adding a null to change the file content
-    New1 = hashlib.md5(open('Images\Test1.jpg','rb').read()).hexdigest();
-    print("Hash2: " + New1);
 
-    file = open('Images\Test2.jpg', 'rb').read()
-    with open('Images\Test2.jpg', 'wb') as new_file:
-        new_file.write(file+'\0')  #here we are adding a null to change the file content
-    New2 = hashlib.md5(open('Images\Test2.jpg','rb').read()).hexdigest();
-    print("Hash3: " + New2);
+    hasher1 = hashlib.md5()
+    with open('Images\Test1.jpg', 'ab') as afile:
+        buf = afile.write(b'\0')
+    new1 = hashlib.md5(open('Images\Test1.jpg','rb').read()).hexdigest();
 
-    file = open('Images\Test3.jpg', 'rb').read()
-    with open('Images\Test3.jpg', 'wb') as new_file:
-        new_file.write(file+'\0')  #here we are adding a null to change the file content
-    New3 = hashlib.md5(open('Images\Test3.jpg','rb').read()).hexdigest();
-    print("Hash4: " + New3);
+    hasher2 = hashlib.md5()
+    with open('Images\Test2.jpg', 'ab') as afile:
+        buf = afile.write(b'\0')
+    new2 = hashlib.md5(open('Images\Test2.jpg','rb').read()).hexdigest();
+
+    hasher3 = hashlib.md5()
+    with open('Images\Test3.jpg', 'ab') as afile:
+        buf = afile.write(b'\0')
+    new3 = hashlib.md5(open('Images\Test3.jpg','rb').read()).hexdigest();
+
+
+    print("Hash1: " + new);
+    print("Hash2: " + new1);
+    print("Hash3: " + new2);
+    print("Hash4: " + new3);
+
+
+
+Main();
