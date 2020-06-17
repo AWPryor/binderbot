@@ -13,6 +13,7 @@ def intro():
     print("Press 3 to disconnect to Nord VPN");
     print('Press 4 to buy phone numbers')
     print('Press 5 to clear cache')
+    print('Press 6 to exit')
     choise = input("Select a number: ");
     print(type(choise));
 
@@ -36,6 +37,9 @@ def intro():
         os.system('ClearBrowser.py');
         print('cookies cleared')
         intro();
+    elif (choise == '6'):
+        print('Goodbye')
+        exit()
 
 
 
