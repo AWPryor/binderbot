@@ -1,10 +1,11 @@
-import requests
+import requests;
 apikey = 'eefdddb60352ece3762c37AcA4efccA2';
 
 
 def ask():
     print("Press 1 to check balance");
     print("Press 2 to order phones")
+    print("Press 3 to exit")
     choise = input("Hello, Please select a service")
 
     if (choise == '1') :
@@ -56,9 +57,9 @@ def ask():
         ask();
 
 
-    elif (choise =='3'):
-        checkPhone(phoneid);
-        ask();
+    elif(choise =='3'):
+        print('goodbye')
+
 
 
 def accBalance():
@@ -79,5 +80,4 @@ def checkPhone(phoneid):
         print(Responce2);
 
 
-ask();
 1

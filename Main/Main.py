@@ -1,4 +1,6 @@
-import os
+
+import os;
+import phoneapi;
 
 
 def intro():
@@ -9,11 +11,13 @@ def intro():
     print("Press 1 to change image signitures");
     print("Press 2 to connect to Nord VPN");
     print("Press 3 to disconnect to Nord VPN");
+    print('Press 4 to buy phone numbers')
     choise = input("Select a number: ");
     print(type(choise));
 
     if (choise == "1"):
-        os.system('md5Sig.py');
+        os.system('ImageProcessor.py');
+        print('done')
         intro();
 
     elif (choise == "2"):
@@ -24,6 +28,11 @@ def intro():
         os.system('vpnDis.py');
         print("You are now disconnected")
         intro();
+    elif (choise == '4'):
+        phoneapi.ask();
+        intro();
+
+
 
 
 
