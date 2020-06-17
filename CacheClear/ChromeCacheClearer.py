@@ -7,9 +7,6 @@ def Main():
     #Save the Current mouse Position.
     position = pyautogui.position()
     
-    im1 = pyautogui.screenshot()
-    im1.save(r"screenshot.png")
-    
     #Open a new Chrome Tab.
     OpenChrome()
     
