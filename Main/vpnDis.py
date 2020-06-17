@@ -1,3 +1,6 @@
 import os
-os.chdir("Bat")
-os.system("Disconect.bat")
+
+def Main():
+    os.chdir("Bat");
+    os.system("Disconect.bat");
+Main();
