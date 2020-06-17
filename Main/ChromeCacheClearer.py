@@ -35,7 +35,7 @@ def ClearCookiesCashe():
     pyautogui.typewrite('chrome://settings/clearBrowserData\n')
     
     #Wait for it to load.
-    time.sleep(1)
+    time.sleep(2)
     
     #Clear the cache + cookies.
     image = "Images/ClearDataIcon.png"
