@@ -5,6 +5,8 @@ def Main():
     checkOld();
     Hash();
 
+
+
 def checkOld():
         old = hashlib.md5(open('Images\Test.jpg','rb').read()).hexdigest(); #rb = readbyte ,so it will work for text as well as media (image,video) files
         old1 = hashlib.md5(open('Images\Test1.jpg','rb').read()).hexdigest();
@@ -23,7 +25,6 @@ def checkOld():
 def Hash():
     file = open('Images\Test.jpg', 'rb').read()
     with open('Images\Test.jpg', 'ab') as new_file:
-        print(file)
         new_file.write(file+b'\0')  #here we are adding a null to change the file content
     New = hashlib.md5(open('Images\Test.jpg','rb').read()).hexdigest();
     print("Your new hashes are");
@@ -46,6 +47,7 @@ def Hash():
         new_file.write(file+b'\0')  #here we are adding a null to change the file content
     New3 = hashlib.md5(open('Images\Test3.jpg','rb').read()).hexdigest();
     print("Hash4: " + New3);
-    
+
+
 
 Main();

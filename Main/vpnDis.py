@@ -1,2 +1,6 @@
-import subprocess
-subprocess.call(['Bat\Disconect.bat']);
+import os
+
+def Main():
+    os.chdir("Bat");
+    os.system("Disconect.bat");
+Main();

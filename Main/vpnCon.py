@@ -1,5 +1,7 @@
-import subprocess
-import os 
-dir_path = os.path.dirname(os.path.realpath(__file__))
-k = os.path.dirname(dir_path)
-subprocess.call([k])
+import os
+
+def Main():
+    os.chdir("Bat");
+    os.system("Connect.bat");
+
+Main();
