@@ -1,6 +1,4 @@
-import vpnCon;
-import vpnDis;
-import MD5Sig;
+
 
 
 def intro():
@@ -14,14 +12,5 @@ def intro():
 
     choise = input("Select a number: ")
     if (choise == 1):
-        MD5Sig.Main();
         intro();
-    elif (choise ==2):
-        vpnCon.Main();
-        intro();
-    elif (choise ==3):
-        vpnDis.Main();
-        intro();
-
-
 intro()
