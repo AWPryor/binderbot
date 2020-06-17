@@ -1,10 +1,12 @@
 from PIL import Image
 import random
 
+
 def Main(): # Main function
-    
+    print('Starting')
     LOAD() # Load the images that we wish to get a random hash from.
-    HashImages()    # Process each image and put the output in the output folder. 
+    HashImages()    # Process each image and put the output in the output folder.
+    print('Finished')
     
 def LoadNewOutput(i): #Loads a single image into the output folder.
     pathInput = 'Input/'+str(i)+'.png'
