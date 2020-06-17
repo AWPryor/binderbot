@@ -7,9 +7,6 @@ def Main():
     #Save the Current mouse Position.
     position = pyautogui.position()
     
-    im1 = pyautogui.screenshot()
-    im1.save(r"screenshot.png")
-    
     #Open a new Chrome Tab.
     OpenChrome()
     
@@ -21,7 +18,7 @@ def Main():
 
 def OpenChrome():
     #Click on the Chrome Icon
-    image = "ChromeIcon.png" 
+    image = "Images/ChromeIcon.png"
     
     pyautogui.click(pyautogui.locateCenterOnScreen(image))
     
@@ -29,7 +26,7 @@ def OpenChrome():
     time.sleep(2)
     
     #Focus on Chrome tab's url bar.
-    image2 = "Marker.png"
+    image2 = "Images/Marker.png"
     x = pyautogui.locateCenterOnScreen(image2)
     pyautogui.click(x[0]+100,x[1]+50)
     
@@ -41,11 +38,11 @@ def ClearCookiesCashe():
     time.sleep(1)
     
     #Clear the cache + cookies.
-    image = "ClearDataIcon.png"
+    image = "Images/ClearDataIcon.png"
     pyautogui.click(pyautogui.locateCenterOnScreen(image))
     
     #Close Chrome.
-    image = "Marker2.png"
+    image = "Images/Marker2.png"
     pyautogui.click(pyautogui.locateCenterOnScreen(image))
 
 Main()

@@ -1,4 +1,3 @@
-import subprocess
-
-def Main():
-    subprocess.call([r'C:\Users\User\Documents\GitHub\binderbot\Main\Bat\Disconect.bat']);
+import os
+os.chdir("Bat")
+os.system("Disconect.bat")
