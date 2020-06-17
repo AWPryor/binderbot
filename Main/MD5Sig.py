@@ -24,7 +24,7 @@ def Hash():
     file = open('Images\Test.jpg', 'rb').read()
     with open('Images\Test.jpg', 'wb') as new_file:
         print(file)
-        new_file.write(str(file)+'\0')  #here we are adding a null to change the file content
+        new_file.write(file+'\0')  #here we are adding a null to change the file content
     New = hashlib.md5(open('Images\Test.jpg','rb').read()).hexdigest();
     print("Your new hashes are");
     print("Hash1: " + New);
