@@ -1,4 +1,4 @@
-
+import requests;
 import os;
 import phoneapi;
 
@@ -13,7 +13,8 @@ def intro():
     print("Press 3 to disconnect to Nord VPN");
     print('Press 4 to buy phone numbers')
     print('Press 5 to clear cache')
-    print('Press 6 to exit')
+    print('Press 6 to run automated tool')
+    print('Press 7 to exit')
     choise = input("Select a number: ");
     print(type(choise));
 
@@ -37,9 +38,14 @@ def intro():
         os.system('ClearBrowser.py');
         print('cookies cleared')
         intro();
+
     elif (choise == '6'):
-        print('Goodbye')
+        os.system('Auto.py')
+        intro();
+
         exit()
+    elif (choise == '7'):
+        print('Goodbye')
 
 
 
