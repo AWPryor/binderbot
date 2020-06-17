@@ -13,6 +13,5 @@ def Main():
     os.system('ImageProcessor.py');
     print('Input processing complete.')
     print("Automation steps completed. Awaiting phone order.")
-    os.system('Main.py')
 
 Main()
