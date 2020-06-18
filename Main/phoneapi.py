@@ -6,7 +6,7 @@ def ask():
     print("Press 1 to check balance");
     print("Press 2 to order phones")
     print("Press 3 to exit")
-    choise = input("Hello, Please select a service")
+    choise = input("Hello, Please select a service: ")
 
     if (choise == '1') :
         accBalance();
@@ -51,7 +51,9 @@ def ask():
         while alwaystrue:
             print('Press 1 to check status')
             print('Press 2 to check phone number')
-            print('Press 3 to exit - Note if you had an error please exit and reorder')
+            print('Press 3 to cancel current number')
+            print('Press 3 to confirm the code and go back')
+            print('Press 4 to go back and exit')
             b = input("Select your option: ")
 
             if (b == '1'):
@@ -61,7 +63,17 @@ def ask():
             elif (b == '2'):
                 print(phoneid[2])
             elif (b == '3'):
+                response3 = requests.post('https://sms-activate.ru/stubs/handler_api.php?api_key='+apikey+'&action=setStatus&status=8&id='+phoneid[1]);
+                print(response3)
                 break;
+            elif (b == '4'):
+                response4 = requests.post('https://sms-activate.ru/stubs/handler_api.php?api_key='+apikey+'&action=setStatus&status=6&id=' +phoneid[1]);
+                print(response3)
+
+            elif (b == '5'):
+                break;
+
+
 
         ask();
 
