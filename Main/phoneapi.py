@@ -19,6 +19,10 @@ def ask():
         print('Press 3 for Portugal')
         print('Press 4 for Sweden')
         print('Press 5 for Brazil')
+        print('Press 6 for Germany')
+        print('Press 7 for Italy')
+        print('Press 8 for Spain')
+
         country = input('Select a number: ')
         if (country == '1'):
             countryId = '1';
@@ -30,6 +34,12 @@ def ask():
             countryId = '46';
         elif (country == '5'):
             countryId = '73'
+        elif (country == '6'):
+            countryId = '43'
+        elif (country == '7'):
+            countryId = '86'
+        elif (country == '8'):
+            countryId = '56'
         print('Press 1 for Google')
         print('Press 2 for tinder')
         service = input('Select an option: ')
@@ -37,8 +47,6 @@ def ask():
             serviceId = 'go'
         elif (service == '2'):
             serviceId='oi'
-        print(serviceId)
-        print(countryId)
         phoneid=buyPhone(serviceId, countryId);
         while alwaystrue:
             print('Press 1 to check status')
@@ -47,7 +55,6 @@ def ask():
             b = input("Select your option: ")
 
             if (b == '1'):
-                print(phoneid[1])
                 response2 = requests.post('https://sms-activate.ru/stubs/handler_api.php?api_key='+apikey+'&action=getStatus&id='+phoneid[1]);
                 Responce2 = response2.text;
                 print(Responce2);
@@ -76,7 +83,6 @@ def buyPhone(serviceId, countryId):
     return Responce1.split(":");
 
 def checkPhone(phoneid):
-        print(phoneid)
         response2 = requests.post('https://sms-activate.ru/stubs/handler_api.php?api_key=eefdddb60352ece3762c37AcA4efccA2&action=getStatus&id='+phoneid[1]+'275173238');
         Responce2 = response2.text;
         print(Responce2);
