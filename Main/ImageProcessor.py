@@ -1,28 +1,32 @@
 from PIL import Image
 import random
+import os
+
+images = []
 
 
 def Main(): # Main function
     print('Starting')
+    ClearOutput()
     LOAD() # Load the images that we wish to get a random hash from.
     HashImages()    # Process each image and put the output in the output folder.
+    Save(images)
     print('Finished')
     
-def LoadNewOutput(i): #Loads a single image into the output folder.
-    pathInput = 'Input/'+str(i)+'.png'
-    pathOutput = 'Output/'+str(i)+'.png'
-    im = Image.open(pathInput)
-    im.save(pathOutput)
     
 def LOAD(): # Loads All images into the output folder.
-    LoadNewOutput(1)
-    LoadNewOutput(2)
-    LoadNewOutput(3)
-    LoadNewOutput(4)
+    global images
+    images = []
+    with os.scandir("Input") as dirs:
+        for entry in dirs:
+            im = Image.open("Input/"+entry.name)
+            images.append(im)
+
+def Save(images):
+    for k in range(len(images)):
+        images[k].save("Output/"+str(k)+".png")
     
-def SwapSingle(i): # Swaps a pair of random pixil's values.
-    pathOutput = 'Output/'+str(i)+'.png'
-    im = Image.open(pathOutput)
+def SwapSingle(im): # Swaps a pair of random pixil's values.
     columns, rows = im.size
     c1 = random.randint(0,columns)
     c2 = random.randint(0,columns)
@@ -32,18 +36,27 @@ def SwapSingle(i): # Swaps a pair of random pixil's values.
     holder = pix[c1,r1]
     pix[c1,r1]=pix[c2,r2]
     pix[c2,r2]=holder
-    im.save(pathOutput)
+    return im
     
-def GetSingleHash(j): # Generates a new hash for a single image by swapping random pixils
+def GetSingleHash(im): # Generates a new hash for a single image by swapping random pixils
     k = random.randint(1,5)
     for i in range (k):
-        SwapSingle(j)
+        im = SwapSingle(im)
+    return im
         
 def HashImages(): # Hashes all images
-    GetSingleHash(1)
-    GetSingleHash(2)
-    GetSingleHash(3)
-    GetSingleHash(4)
+    global images
+    for k in range(len(images)):
+        images[k] = GetSingleHash(images[k])
     
-Main()   
-    
+def ClearOutput(): # Clears the Output Folder
+    path = r"Output"
+    with os.scandir(path) as dirs: # Iteratively removes each file inside the output folder.
+        for entry in dirs:
+            os.remove("Output/"+entry.name)
+            
+
+import time
+start_time = time.time()
+Main()
+print("--- Time to complete hashing: %s seconds ---" % (time.time() - start_time))
