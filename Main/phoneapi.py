@@ -79,6 +79,7 @@ def accBalance():
 def buyPhone(serviceId, countryId):
     response1 = requests.post('https://sms-activate.ru/stubs/handler_api.php?api_key='+apikey+'&action=getNumber&service='+serviceId+'$&ref=745234$ref&country='+countryId);
     Responce1 = response1.text;
+    print(Responce1);
     return Responce1.split(":");
 
 def checkPhone(phoneid):
