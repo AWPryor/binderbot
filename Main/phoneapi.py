@@ -22,6 +22,8 @@ def ask():
         print('Press 6 for Germany')
         print('Press 7 for Italy')
         print('Press 8 for Spain')
+        print('Press 9 for Norway')
+
 
         country = input('Select a number: ')
         if (country == '1'):
@@ -40,6 +42,8 @@ def ask():
             countryId = '86'
         elif (country == '8'):
             countryId = '56'
+        elif (country == '9'):
+            countryId = '48'
         print('Press 1 for Google')
         print('Press 2 for tinder')
         service = input('Select an option: ')
