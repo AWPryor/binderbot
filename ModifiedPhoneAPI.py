@@ -116,22 +116,22 @@ def PhoneBuyer(D):
         D.SetCountryID(16)
         ChoiceManager(D)
     elif (country == '3'):
-        D.D.SetCountryID(117)
+        D.SetCountryID(117)
         ChoiceManager(D)
     elif (country == '4'):
-        D.D.SetCountryID(46)
+        D.SetCountryID(46)
         ChoiceManager(D)
     elif (country == '5'):
-        D.D.SetCountryID(73)
+        D.SetCountryID(73)
         ChoiceManager(D)
     elif (country == '6'):
-        D.D.SetCountryID(43)
+        D.SetCountryID(43)
         ChoiceManager(D)
     elif (country == '7'):
-        D.D.SetCountryID(86)
+        D.SetCountryID(86)
         ChoiceManager(D)
     elif (country == '8'):
-        D.D.SetCountryID(56)
+        D.SetCountryID(56)
         ChoiceManager(D)
         
         
